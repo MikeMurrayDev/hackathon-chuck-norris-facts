@@ -1,5 +1,7 @@
-const accountSid = 'AC5d55db969216cf53fb60b5b51c5db896';
-const authToken = 'your_auth_token';
+var envs = require('envs');
+
+const accountSid = envs(TWILIO_ACCOUNTSID);
+const authToken = envs(TWILIO_AUTHTOKEN);
 const client = require('twilio')(accountSid, authToken);
 
 client.messages
@@ -9,3 +11,5 @@ client.messages
      to: '+15558675310'
    })
   .then(message => console.log(message.sid));
+
+  console.log('From SEND_SMS Twilio AuthToken: ', process.env.TWILIO_AUTHTOKEN);

@@ -2,3 +2,5 @@ node_modules
 dist
 variables.env
 package-lock.json
+logs
+*.log
