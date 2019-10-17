@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
-import './css/custom.scss';
+import ReactDOM from 'react-dom';
 
-render(<h1 className='red'>Hello, World</h1>, document.getElementById('root'));
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
