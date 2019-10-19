@@ -1,17 +1,7 @@
 // screen sizes
-$breakpoints: (phone: 480px, 
-    tablet: 768px, 
-    desktop: 1024px) !default;
-
-
-// reference: https://css-tricks.com/approaches-media-queries-sass/
-
-// examples of how to use the breakpoints
-// @include media(">phone", "<tablet") {
-// }
-
-// @include media(">tablet", "<950px") {
-// }
+$phone: 480px;
+$tablet: 768px;
+$desktop: 1024px;
 
 $font-stack: Helvetica, sans-serif;
 $primary-color: #FFF;
@@ -19,4 +9,5 @@ $primary-color: #FFF;
 body {
     font: $font-stack;
     background-color: $primary-color;
+    color: black;
 }

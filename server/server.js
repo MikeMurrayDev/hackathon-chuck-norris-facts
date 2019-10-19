@@ -12,12 +12,13 @@ const app = express();
 
 app.use(express.static('dist'));
 app.use(express.static('public'));
+// app.use(express.json());
 
 app.get('/random', (req, res) => {
     axios.get(`https://api.chucknorris.io/jokes/random`)
         .then((result) => {
             res.send(result.data);
-            console.log('Chuck Random: ', result);
+            console.log('Chuck Random Fact: ', result);
         })
         .catch((error) => {
             console.error(error);
@@ -37,17 +38,20 @@ app.get('/get_categories', (req, res) => {
         })
 });
 
-app.get('/joke_from_category', (req, res) => {
+app.get('/fact/:category', (req, res) => {
+    const category = req.params.category;
+
     axios.get(`https://api.chucknorris.io/jokes/random?category=${category}`)
         .then((result) => {
             res.send(result.data);
-            console.log('Chuck Categories: ', result);
+            console.log('Chuck Category Fact: ', result);
         })
         .catch((error) => {
             console.error(error);
             res.send('An error occured.');
         })
 });
+
 // client.messages
 //   .create({
 //      body: 'This is a TEST!  WOOOHOOOOO!!',
