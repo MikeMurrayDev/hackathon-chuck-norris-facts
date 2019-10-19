@@ -5,22 +5,28 @@ class CategoryDropdown extends Component {
         super(props);
 
         this.state = {
-            category: ''
+            category: '',
         };
 
-        this.onChange = this.onChange.bind(this);
+        // this.onChange = this.onChange.bind(this);
     }
 
-    onChange(e){
-        this.setState({[e.target.name]: e.target.value})
-    }
+    // onChange(e){
+    //     this.setState({[e.target.name]: e.target.value})
+    //     console.log('Category: ', e.target.value);
+    // }
+
+    // console.log('Component Category: ', category);
 
     render(){
+        console.log('Component Render');
+        
+        const categories = this.state.categories;
+        const categoryItems = categories.map((category) => <option key={category} value={category}>{category}</option>);
+        
         return(
-            <select type='dropdown' name='categories' value={this.state.category} onChange={this.onChange}>
-                {this.props.categories.map( cat =>
-                    <option key={cat.key} value={cat.key}>{cat.value}</option>
-                )};
+            <select type='dropdown' name='category' value={this.state.category} onChange={this.props.onChange}>
+                {categoryItems}
             </select>
         );
     }
