@@ -5,7 +5,7 @@
         display: grid;
         text-align: center;
         width : 95%;
-        max-width : 1400px; 
+        max-width : 2000px; 
         margin: 2.5%;
     };
     @media screen and (min-width: $tablet) {
@@ -27,35 +27,11 @@
     margin: 10px 0px 10px 0px;
 }
 
-.row-one {
-    background-color: brown;
-}
-
-.row-two {
-    background-color: green;
-}
-
-.row-three {
-    background-color: blue;
-}
-
-.row-four {
-    background-color: yellow;
-}
-
-.row-five {
-    background-color: blueviolet;
-}
-
-.row-six {
-    background-color: red;
-}
-
 .divider {
     height: 0.5px;
     background-color: black;
     width: 65%;
-    margin: auto;
+    margin: 1em auto 1em auto;
 }
 
 .header {
